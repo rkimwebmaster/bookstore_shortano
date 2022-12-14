@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!
+{% endblock %}
+
+{% block body %}
+	<section class="ftco-section ftco-no-pb ftco-no-pt" id="chapter-section">
+		<div class="container">
+			<div class="row justify-content-center py-5 mt-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<div class="example-wrapper">
+						<h1>Votre panier d'achat</h1>
+
+						This friendly message is coming from:
+						<ul>
+							<li>Your controller at
+								<code>
+									<a href="{{ 'C:/xampp/htdocs/bookstore/src/Controller/PanierController.php'|file_link(0) }}">src/Controller/PanierController.php</a>
+								</code>
+							</li>
+							<li>Your template at
+								<code>
+									<a href="{{ 'C:/xampp/htdocs/bookstore/templates/panier/index.html.twig'|file_link(0) }}">templates/panier/index.html.twig</a>
+								</code>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

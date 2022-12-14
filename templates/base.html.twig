@@ -1,19 +1,123 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang="en">
+	<head>
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+		<link rel="stylesheet" href="css/animate.css">
+
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/magnific-popup.css">
+
+		<link rel="stylesheet" href="css/flaticon.css">
+		<link
+		rel="stylesheet" href="css/style.css">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    
+{% include "_partials/_nav.html.twig" %}
+{% block body %}
+{% include "_partials/_accueil.html.twig" %}
+{% include "_partials/_apropos.html.twig" %}
+{% include "_partials/_chapitres.html.twig" %}
+{# 
+    <section class="ftco-section ftco-no-pt">
+    	<div class="container">
+    		<div class="row justify-content-center py-5 mt-5">
+          <div class="col-md-5 heading-section text-center ftco-animate">
+          	<span class="subheading">Services</span>
+            <h2 class="mb-4">Services</h2>
+          </div>
+        </div>
+    		<div class="row">
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<div class="services-1 bg-light">
+							<span class="icon">
+								<i class="flaticon-user-experience"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Experience</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<div class="services-1 bg-light">
+							<span class="icon">
+								<i class="flaticon-network"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Marketing Goals</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<div class="services-1 bg-light">
+							<span class="icon">
+								<i class="flaticon-innovation"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Targetting Vission</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+    	</div>
+    </section> #}
+
+		{% include "_partials/_temoignages.html.twig" %}
+		{% include "_partials/_meslivres.html.twig" %}
+		{% include "_partials/_auteur.html.twig" %}
+{% endblock %}
+         {% include "_partials/_contact.html.twig" %}
+         {% include "_partials/_footer.html.twig" %}
+
+
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
 </html>
