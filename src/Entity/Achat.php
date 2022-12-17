@@ -34,19 +34,24 @@ class Achat
     #[ORM\JoinColumn(nullable: false)]
     private ?Livre $livre = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Adresse $adresseLivraison = null;
 
+    // #[ORM\ManyToOne(inversedBy: 'achats')]
+    // #[ORM\JoinColumn(nullable: false)]
+    // private ?Shipment $shipment = null;
+
     public function __construct(Livre $livre)
     {
-        if(!$livre->isIsPrincipalRecent()){
-            return 0;
-        }
+        $this->date=new \DateTimeImmutable();
+        // if(!$livre->isIsPrincipalRecent()){
+        //     return 0;
+        // }
         $this->livre=$livre;
         $this->quantite=1;
         $this->isLivre=false;
-        $this->date= new \DateTimeImmutable();
+        $this->etat="en cours";
     }
 
     public function getId(): ?int
@@ -134,6 +139,18 @@ class Achat
     public function setAdresseLivraison(Adresse $adresseLivraison): self
     {
         $this->adresseLivraison = $adresseLivraison;
+
+        return $this;
+    }
+
+    public function getShipment(): ?Shipment
+    {
+        return $this->shipment;
+    }
+
+    public function setShipment(?Shipment $shipment): self
+    {
+        $this->shipment = $shipment;
 
         return $this;
     }

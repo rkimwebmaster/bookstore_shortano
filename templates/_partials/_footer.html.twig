@@ -4,24 +4,27 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h2 class="ftco-heading-2">Mot de l'auteur </h2>
+              <p>
+              L'ecriture est ce qui me passionne. Monsieur Shortano Kabongo est entrepreneur et chercheur dans le secteur d'economie appliquée.
+
+              </p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-	              <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-	              <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="{{parametre.twitter}}"><span class="fa fa-twitter"></span></a></li>
+	              <li class="ftco-animate"><a href="{{parametre.facebook}}"><span class="fa fa-facebook"></span></a></li>
+	              <li class="ftco-animate"><a href="{{parametre.instagramme}}"><span class="fa fa-instagram"></span></a></li>
               </ul>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
+              <h2 class="ftco-heading-2">Menu </h2>
               <ul class="list-unstyled">
-                <li><a href="#"></span>Home</a></li>
-                <li><a href="#"></span>About</a></li>
-                <li><a href="#"></span>Chapter</a></li>
-                <li><a href="#"></span>Reviews</a></li>
-                <li><a href="#"></span>Contact</a></li>
+                <li><a href="{{url('app_accueil', {page:1})}}"></span>Accueil</a></li>
+                <li><a href="{{url('app_accueil', {page:2})}}"></span>A Propos </a></li>
+                <li><a href="{{url('app_accueil', {page:3})}}"></span>Chapitres </a></li>
+                <li><a href="{{url('app_accueil', {page:4})}}"></span>Témoignages </a></li>
+                <li><a href="{{url('app_accueil', {page:7})}}"></span>Contact</a></li>
               </ul>
             </div>
           </div>
@@ -29,20 +32,20 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Services</h2>
               <ul class="list-unstyled">
-                <li><a href="#"></span>Experience</a></li>
-                <li><a href="#"></span>Marketing Goals</a></li>
-                <li><a href="#"></span>Targetting Vission</a></li>
+                <li><a href="{{url('app_login')}}"></span>Connexion </a></li>
+                <li><a href="{{url('app_register', {page:7})}}"></span>Création de compte </a></li>
+                <li><a href="{{url('app_privacy_page')}}"></span>Term of privacy</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">Vous avez une Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon fa fa-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon fa fa-map-marker"></span><span class="text">{{parametre.adresse}}</span></li>
+	                <li><a href="{{url('app_accueil', {page:7})}}"><span class="icon fa fa-phone"></span><span class="text">{{parametre.telephone}}</span></a></li>
+	                <li><a href="{{url('app_accueil', {page:7})}}"><span class="icon fa fa-paper-plane"></span><span class="text">{{parametre.email}}</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -50,10 +53,9 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droit reservé | Site conçu par  <i class="fa fa-search-plus" aria-hidden="true"></i> by <a href="https://webtronblue.com" target="_blank">Webtronblue</a>
+            </p>
           </div>
         </div>
       </div>

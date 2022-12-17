@@ -39,15 +39,15 @@ class Parametre
     private ?string $website = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $monnaie = null;
+    private ?string $monnaie = "null";
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Livre $livre = null;
+    // #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    // #[ORM\JoinColumn(nullable: false)]
+    // private ?Livre $livre = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Auteur $auteur = null;
+    // #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    // #[ORM\JoinColumn(nullable: false)]
+    // private ?Auteur $auteur = null;
 
     public function getId(): ?int
     {

@@ -3,8 +3,10 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h2 class="mb-4">Contactez-moi</h2>
+            <p>
+            Peux importe le type de canal que vous utiliser pour contacter l'auteur, il vous repond.
+            </p>
           </div>
         </div>
 
@@ -15,19 +17,19 @@
           			<span class="fa fa-map-marker"></span>
           		</div>
           		<div>
-	          		<h3 class="mb-4">Address</h3>
-		            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+	          		<h3 class="mb-4">Addresse</h3>
+		            <p>{{auteur.adresse}}</p>
 		          </div>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box text-center p-4 bg-light">
           		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="fa fa-phone"></span>
+          			<span class="fa fa-whatsapp"></span>
           		</div>
           		<div>
-	          		<h3 class="mb-4">Contact Number</h3>
-		            <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+	          		<h3 class="mb-4">Numéro whatasapp </h3>
+		            <p><a href="tel://{{auteur.telephone}}">{{auteur.telephone}}</a></p>
 	            </div>
 	          </div>
           </div>
@@ -37,8 +39,8 @@
           			<span class="fa fa-paper-plane"></span>
           		</div>
           		<div>
-	          		<h3 class="mb-4">Email Address</h3>
-		            <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+	          		<h3 class="mb-4">Addresse Email</h3>
+		            <p><a href="mailto:{{auteur.email}}">{{auteur.email}}</a></p>
 		          </div>
 	          </div>
           </div>
@@ -49,7 +51,7 @@
           		</div>
           		<div>
 	          		<h3 class="mb-4">Website</h3>
-		            <p><a href="#">yoursite.com</a></p>
+		            <p><a href="#">{{parametre.website}}</a></p>
 	            </div>
 	          </div>
           </div>
@@ -57,29 +59,32 @@
 
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
+            <form action="{{url('app_creation_contact')}}" method="GET" class="bg-light p-4 p-md-5 contact-form">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" name="nom" required placeholder="Votre nom">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" class="form-control" name="email" required placeholder="Votre adresse mail">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" class="form-control" name="sujet" required  placeholder="Sujet">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea id="" cols="30" rows="7" required name="message" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Envoyez Message à l'auteur" class="btn btn-primary py-3 px-5">
               </div>
             </form>
           
           </div>
 
           <div class="col-md-6 d-flex">
-          	<div id="map" class="map"></div>
-          	<!-- <div class="img" style="background-image: url(images/about.jpg);"></div> -->
+          	{# <div id="map" class="map"> #}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15681.577665944227!2d25.503844677452783!3d-10.704030577929913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1979e5c6fb5887d9%3A0xd7d7ba30a1cdd223!2smaintecas!5e0!3m2!1sfr!2scd!4v1671093453961!5m2!1sfr!2scd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {# </div> #}
+          	{# <div class="img" style="background-image: url(images/about.jpg);"></div> #}
+          	<div class="img" style="background-image: url({{asset('uploads/images/'~ auteur.photo)}});"></div>
           </div>
         </div>
       </div>

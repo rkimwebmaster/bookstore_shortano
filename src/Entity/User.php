@@ -37,6 +37,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $telephone = null;
 
+    #[ORM\Column(length: 255, nullable:true)]
+    private ?string $nomComplet = null;
+
+    public function __toString()
+    {
+        return $this->email;
+    }
+
     public function __construct()
     {
         $this->achats = new ArrayCollection();
@@ -76,7 +84,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $roles[] = 'ROLE_CLIENT';
 
         return array_unique($roles);
     }
@@ -150,6 +158,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getNomComplet(): ?string
+    {
+        return $this->nomComplet;
+    }
+
+    public function setNomComplet(string $nomComplet): self
+    {
+        $this->nomComplet = $nomComplet;
 
         return $this;
     }

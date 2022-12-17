@@ -26,6 +26,14 @@ class Contact
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
+    public function __construct($nom, $email, $sujet, $message)
+    {
+        $this->nom=$nom;
+        $this->email=$email;
+        $this->sujet=$sujet;
+        $this->message=$message;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

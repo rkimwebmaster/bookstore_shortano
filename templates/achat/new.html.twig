@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Achat{% endblock %}
+{% block title %}New Achat
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Achat</h1>
+	<section class="ftco-section ftco-no-pb ftco-partner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg ftco-animate">
 
-    {{ include('achat/_form.html.twig') }}
+					<h1>Merci de remplir les information pour confirmation</h1>
 
-    <a href="{{ path('app_achat_index') }}">back to list</a>
+					{{ include('achat/_form.html.twig') }}
+
+					<a href="{{ path('app_achat_index') }}">retour à la liste </a>
+
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}

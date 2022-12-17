@@ -1,0 +1,8 @@
+preparer des images des autres llivres au format jpg, dimension , belles 
+pour chaque livre donnez le titre et la categorie, par xemple roman , fiction etc 
+
+preparer les infos du livre a vendre titre , sous titre , deux images au format XXXXXX 
+
+connecter a l'interface admin et initialiser le systeme 
+
+tester l ihm des utilisateurs 

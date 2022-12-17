@@ -12,6 +12,7 @@
 					<h2 class="mb-4">S'enregistrer</h2>
 					<p>Créez votre compte desormais et commencez a commercer avec nous </p>
 					{{ form_start(registrationForm) }}
+					{{ form_row(registrationForm.nomComplet) }}
 					{{ form_row(registrationForm.email) }}
 					{{ form_row(registrationForm.telephone) }}
 					{{ form_row(registrationForm.plainPassword, {

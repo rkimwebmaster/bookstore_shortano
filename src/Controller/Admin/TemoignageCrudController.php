@@ -28,7 +28,7 @@ class TemoignageCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextField::new('fonction'),
             ImageField::new('photo')->setBasePath('uploads/images/')->setUploadDir('public/uploads/images/'),
-            TextEditorField::new('message'),
+            TextField::new('message'),
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),
         ];
@@ -38,7 +38,7 @@ class TemoignageCrudController extends AbstractCrudController
     {
         return $actions
             // ...
-            ->remove(Crud::PAGE_INDEX, Action::NEW)
+            // ->remove(Crud::PAGE_INDEX, Action::NEW)
             // ->remove(Crud::PAGE_DETAIL, Action::EDIT)
         ;
     }

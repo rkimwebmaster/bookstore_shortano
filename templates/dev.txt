@@ -1,0 +1,2 @@
+travailler les arrières plan des images, les mettre en transparent 
+gerer la dimension de l'image 1 du livre pour rassurer l'affichage du sous titre des menus 

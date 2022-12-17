@@ -13,7 +13,7 @@ use App\Entity\Traits\Timer;
 #[ORM\HasLifecycleCallbacks()]
 class Temoignage
 {
-    use Timer;
+    // use Timer;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -26,7 +26,7 @@ class Temoignage
     #[ORM\Column(length: 255)]
     private ?string $fonction = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(length: 255)]
     private ?string $message = null;
 
     #[ORM\Column(length: 255)]

@@ -28,15 +28,21 @@ class Adresse
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
+    // #[ORM\Column]
+    // private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column(nullable:true)]
-    private ?\DateTimeImmutable $updatedAt = null;
+    // #[ORM\Column(nullable:true)]
+    // private ?\DateTimeImmutable $updatedAt = null;
+
+    public function __toString()
+    {
+        return $this->adresse;
+    }
 
     public function __construct()
     {
-        $this->createdAt=new \DateTimeImmutable();
+        // $this->createdAt=new \DateTimeImmutable();
+        // $this->updatedAt=new \DateTimeImmutable();
     }
 
     

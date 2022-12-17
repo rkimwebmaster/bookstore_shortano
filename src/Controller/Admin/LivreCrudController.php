@@ -36,7 +36,7 @@ class LivreCrudController extends AbstractCrudController
             MoneyField::new('prix')->setCurrency("USD"),
             ImageField::new('imagePrincipale')->setBasePath('uploads/images/')->setUploadDir('public/uploads/images/'),
             ImageField::new('imageSecondaire')->setBasePath('uploads/images/')->setUploadDir('public/uploads/images/'),
-            TextField::new('APropos'),
+            TextEditorField::new('APropos'),
             CollectionField::new('chapitres')->useEntryCrudForm(ChapitreCrudController::class),
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),

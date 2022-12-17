@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!
+{% endblock %}
+
+{% block body %}
+	<section class="ftco-section ftco-no-pb ftco-no-pt" id="chapter-section">
+		<div class="container">
+			<div class="row justify-content-center py-5 mt-5">
+				<div class="row justify-content-center mb-5 pb-3">
+					<div class="col-md-12 heading-section text-center ftco-animate">
+						<h2 class="mb-4">Privacy policy</h2>
+						<p>
+							{{page.contenu}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	  {% include "_partials/_banques.html.twig" %}
+{% endblock %}

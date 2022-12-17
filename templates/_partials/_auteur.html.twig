@@ -4,7 +4,7 @@
     			<div class="col-md-6 col-lg-6 d-flex">
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/about.jpg);">
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url({{asset('uploads/images/'~ auteur.photo)}});">
 	    				</div>
     				</div>
     			</div>
@@ -13,24 +13,24 @@
     					<div class="py-md-5">
 		    				<div class="row justify-content-start pb-3">
 				          <div class="col-md-12 heading-section ftco-animate">
-				          	<span class="subheading">Know More About The Author</span>
-				            <h2 class="mb-4">Franklin Henderson</h2>
-				            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+				          	<span class="subheading">En savoir un peu plus sur l'auteur </span>
+				            <h2 class="mb-4">{{auteur|title}}</h2>
+				            <p>{{livre.APropos|u.truncate(40)|raw}}</p>
 				            <ul class="about-info mt-4 px-md-0 px-2">
-				            	<li class="d-flex"><span>Name:</span> <span>Franklin Henderson</span></li>
-				            	<li class="d-flex"><span>Date of birth:</span> <span>November 28, 1980</span></li>
-				            	<li class="d-flex"><span>Address:</span> <span>San Francisco CA 97987 USA</span></li>
-				            	<li class="d-flex"><span>Zip code:</span> <span>1000</span></li>
-				            	<li class="d-flex"><span>Email:</span> <span>franklinsample@gmail.com</span></li>
-				            	<li class="d-flex"><span>Phone: </span> <span>+1-2234-5678-9-0</span></li>
+				            	<li class="d-flex"><span>Noms :</span> <span>{{auteur}}</span></li>
+				            	<li class="d-flex"><span>Date de naissance :</span> <span>{{auteur.dateNaissance|format_date("long")}}</span></li>
+				            	<li class="d-flex"><span>Adresse:</span> <span>{{auteur.adresse}}</span></li>
+				            	<li class="d-flex"><span>Zip code:</span> <span>{{auteur.codePostal}}</span></li>
+				            	<li class="d-flex"><span>Email:</span> <span>{{auteur.email}}</span></li>
+				            	<li class="d-flex"><span>Téléphone: </span> <span>{{auteur.telephone}}</span></li>
 				            </ul>
 				          </div>
 				        </div>
 			          <div class="counter-wrap ftco-animate d-flex mt-md-3">
 		              <div class="text">
 		              	<p class="mb-4 btn-custom">
-			                <span class="number" data-number="120">0</span>
-			                <span>View All Books</span>
+			                 <span class="number" data-number="{{livre.prix}}">0</span>
+			                <span>USD J'achete le livre</span>
 		                </p>
 		              </div>
 			          </div>
