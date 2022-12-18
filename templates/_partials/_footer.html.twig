@@ -4,9 +4,9 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Mot de l'auteur </h2>
+              <h2 class="ftco-heading-2">Mot sur {{auteur}} </h2>
               <p>
-              L'ecriture est ce qui me passionne. Monsieur Shortano Kabongo est entrepreneur et chercheur dans le secteur d'economie appliquée.
+              {{auteur.biographie|raw }}
 
               </p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
@@ -30,7 +30,7 @@
           </div>
           <div class="col-md">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Services</h2>
+              <h2 class="ftco-heading-2">Liens utiles</h2>
               <ul class="list-unstyled">
                 <li><a href="{{url('app_login')}}"></span>Connexion </a></li>
                 <li><a href="{{url('app_register', {page:7})}}"></span>Création de compte </a></li>
@@ -44,8 +44,8 @@
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon fa fa-map-marker"></span><span class="text">{{parametre.adresse}}</span></li>
-	                <li><a href="{{url('app_accueil', {page:7})}}"><span class="icon fa fa-phone"></span><span class="text">{{parametre.telephone}}</span></a></li>
-	                <li><a href="{{url('app_accueil', {page:7})}}"><span class="icon fa fa-paper-plane"></span><span class="text">{{parametre.email}}</span></a></li>
+	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">{{parametre.telephone}}</span></a></li>
+	                <li title="Envoyer un mail " ><a href="mailto:{{parametre.email}}"><span class="icon fa fa-paper-plane"></span><span class="text">{{parametre.email|lower}}</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <p>
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droit reservé | Site conçu par  <i class="fa fa-search-plus" aria-hidden="true"></i> by <a href="https://webtronblue.com" target="_blank">Webtronblue</a>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droit reservé | Site conçu <i class="fa fa-search-plus" aria-hidden="true"></i> par <a href="https://webtronblue.com" target="_blank">Webtronblue</a>
             </p>
           </div>
         </div>

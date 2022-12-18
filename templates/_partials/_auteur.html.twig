@@ -15,7 +15,7 @@
 				          <div class="col-md-12 heading-section ftco-animate">
 				          	<span class="subheading">En savoir un peu plus sur l'auteur </span>
 				            <h2 class="mb-4">{{auteur|title}}</h2>
-				            <p>{{livre.APropos|u.truncate(40)|raw}}</p>
+				            <p>{{auteur.biographie|u.truncate(60,'...')|raw}}</p>
 				            <ul class="about-info mt-4 px-md-0 px-2">
 				            	<li class="d-flex"><span>Noms :</span> <span>{{auteur}}</span></li>
 				            	<li class="d-flex"><span>Date de naissance :</span> <span>{{auteur.dateNaissance|format_date("long")}}</span></li>
