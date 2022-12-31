@@ -1,21 +1,90 @@
-    <nav class="navbar navbar-expand-lg  navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container ">
-	      <a title="L'Auteur"  class="navbar-brand" href="{{url('app_accueil', {page:6})}}">{{auteur}}<span>.</span></a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item" #home-section ><a href="{{url('app_accueil', {page:1})}}" class="nav-link"><span>Accueil</span></a></li>
-	          <li class="nav-item"><a href="{{url('app_accueil', {page:2})}}" class="nav-link"><span>A Propos</span></a></li>
-	          <li class="nav-item"><a href="{{url('app_accueil', {page:3})}}" class="nav-link"><span>Chapitres</span></a></li>
-	          <li class="nav-item"><a href="{{url('app_accueil', {page:4})}}" class="nav-link"><span>Témoignages</span></a></li>
-	          {% if autreLivres|length > 0 %}
-			  <li class="nav-item"><a href="{{url('app_accueil', {page:5})}}" class="nav-link"><span>Mes Livres </span></a></li>
-	          {% endif %}
-			  <li class="nav-item"><a href="{{url('app_accueil', {page:6})}}" class="nav-link"><span>L'Auteur</span></a></li>
-	          <li class="nav-item"><a href="{{url('app_accueil', {page:7})}}" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+<nav class="navbar navbar-expand-lg  navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	<div class="container ">
+		<a title="L'Auteur" class="navbar-brand" href="{{url('app_accueil', {page:6})}}">{{auteur}}<span>.</span>
+		</a>
+		<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="oi oi-menu"></span>
+			Menu
+		</button>
+		<div class="collapse navbar-collapse" id="ftco-nav">
+			<ul class="navbar-nav nav ml-auto">
+				<li class="nav-item" #home-section>
+					<a href="{{url('app_accueil', {page:1})}}" class="nav-link">
+						<span>Accueil</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{url('app_accueil', {page:2})}}" class="nav-link">
+						<span>A Propos</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown no-arrow">
+					<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span>
+							Ouvrage	
+						</span>
+					</a>
+					<!-- Dropdown - User Information -->
+					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+						<a class="dropdown-item" href="{{url('app_accueil', {page:4})}}">
+							<i class="fa fa-user-md  fa-fw mr-2 text-gray-400"></i>
+						<span>Témoignages</span>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="{{url('app_accueil', {page:3})}}">
+							<i class="fas fa-power-off fa-sm fa-fw mr-2 text-danger "></i>
+						<span>Chapitres</span>
+						</a>
+					</div>
+				</li>
+				{# <li class="nav-item">
+					<a href="{{url('app_accueil', {page:3})}}" class="nav-link">
+						<span>Chapitres</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{url('app_accueil', {page:4})}}" class="nav-link">
+						<span>Témoignages</span>
+					</a>
+				</li> #}
+				{% if autreLivres|length > 0 %}
+					<li class="nav-item">
+						<a href="{{url('app_accueil', {page:5})}}" class="nav-link">
+							<span>Mes Livres
+							</span>
+						</a>
+					</li>
+				{% endif %}
+				<li class="nav-item">
+					<a href="{{url('app_accueil', {page:6})}}" class="nav-link">
+						<span>L'Auteur</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{url('app_accueil', {page:7})}}" class="nav-link">
+						<span>Contact</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown no-arrow bg-danger">
+					<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span>
+							Connexion	
+						</span>
+					</a>
+					<!-- Dropdown - User Information -->
+					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+						<a class="dropdown-item" href="#">
+							<i class="fa fa-user-md  fa-fw mr-2 text-gray-400"></i>
+							Voir mon profile
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">
+							<i class="fas fa-power-off fa-sm fa-fw mr-2 text-danger "></i>
+							Déconnexion
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
