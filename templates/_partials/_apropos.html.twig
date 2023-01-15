@@ -1,67 +1,79 @@
-    <section class="ftco-about img ftco-section" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex no-gutters">
-    			<div class="col-md-6 col-lg-6 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url({{asset('uploads/images/'~ livre.imageSecondaire)}});">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-6 pl-md-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		            <h2 class="mb-4">{{livre.titre|title}} </h2>
-		            <p>
-					{{livre.sousTitre|title}}
-					</p>
-		            <div class="text-about">
-		            	{{livre.APropos|raw}}
-		            </div>
-		          </div>
-		        </div>
-	        </div>
-        </div>
-    	</div>
-    </section>
+<section class="ftco-about img ftco-section" id="about-section">
+	<div class="container">
+		<div class="row d-flex no-gutters">
+			<div class="col-md-6 col-lg-6 d-flex">
+				<div class="img-about img d-flex align-items-stretch">
+					<div class="overlay"></div>
+					{% if livre is defined and livre.imageSecondaire is defined %}
+						<div class="img d-flex align-self-stretch align-items-center" style="background-image:url({{asset('uploads/images/'~ livre.imageSecondaire)}});">
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-6 pl-md-5">
+				<div class="row justify-content-start pb-3">
+					<div class="col-md-12 heading-section ftco-animate">
+						<h2 class="mb-4">
+							{% if livre is defined and livre.titre is defined %}
+								{{livre.titre|title}}
+							{% endif %}
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    	<div class="container">
-				<div class="row d-md-flex align-items-center align-items-stretch">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="{{livre.nombreCopieVendues}}">0</strong>
-                <span>Copies Vendues</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="{{livre.nombreCopieImprimees}}">0</strong>
-                <span>Copies Imprimées</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="{{livre.nombreTasseCafes}}">0</strong>
-                <span>Tasses de cafés</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="{{livre.nombreLecteurSatisfaits}}">0</strong>
-                <span>Lecteurs satisfaits </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+						</h2>
+						<p>
+							{% if livre is defined and livre.sousTitre is defined  %}
+								{{livre.sousTitre|title}}
+							{% endif %}
+						</p>
+						<div class="text-about">
+							{% if livre is defined and livre.APropos is defined  %}
+								{{livre.APropos|raw}}
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+	<div class="container">
+		<div class="row d-md-flex align-items-center align-items-stretch">
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+				<div class="block-18 bg-light">
+					<div class="text">
+						<strong class="number" data-number="{{livre ? livre.nombreCopieVendues : '' }}">0</strong>
+						<span>Copies Vendues</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+				<div class="block-18 bg-light">
+					<div class="text">
+						<strong class="number" data-number="{{livre ? livre.nombreCopieImprimees : ''  }}">0</strong>
+						<span>Copies Imprimées</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+				<div class="block-18 bg-light">
+					<div class="text">
+						<strong class="number" data-number="{{livre ? livre.nombreTasseCafes : ''  }}">0</strong>
+						<span>Colloques et conférences</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+				<div class="block-18 bg-light">
+					<div class="text">
+						<strong class="number" data-number="{{livre ? livre.nombreLecteurSatisfaits : ''}}">0</strong>
+						<span>Lecteurs satisfaits
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include '_partials/_chapitres.html.twig' %}

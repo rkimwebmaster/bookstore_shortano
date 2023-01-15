@@ -4,7 +4,9 @@
     			<div class="col-md-6 col-lg-6 d-flex">
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url({{asset('uploads/images/'~ auteur.photo)}});">
+
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url({{asset('uploads/images/'~ ( auteur ? (auteur.photo) : '' ))}});">
+
 	    				</div>
     				</div>
     			</div>
@@ -15,22 +17,24 @@
 				          <div class="col-md-12 heading-section ftco-animate">
 				          	<span class="subheading">En savoir un peu plus sur l'auteur </span>
 				            <h2 class="mb-4">{{auteur|title}}</h2>
-				            <p>{{auteur.biographie|u.truncate(60,'...')|raw}}</p>
+				            <p>{{ auteur ? (auteur.biographie|u.truncate(60,'...')|raw) : '' }}</p>
 				            <ul class="about-info mt-4 px-md-0 px-2">
 				            	<li class="d-flex"><span>Noms :</span> <span>{{auteur}}</span></li>
-				            	<li class="d-flex"><span>Date de naissance :</span> <span>{{auteur.dateNaissance|format_date("long")}}</span></li>
-				            	<li class="d-flex"><span>Adresse:</span> <span>{{auteur.adresse}}</span></li>
-				            	<li class="d-flex"><span>Zip code:</span> <span>{{auteur.codePostal}}</span></li>
-				            	<li class="d-flex"><span>Email:</span> <span>{{auteur.email}}</span></li>
-				            	<li class="d-flex"><span>Téléphone: </span> <span>{{auteur.telephone}}</span></li>
+				            	<li class="d-flex"><span>Date de naissance :</span> <span>{{ auteur ? (auteur.dateNaissance|format_date("long")) : ''}}</span></li>
+				            	<li class="d-flex"><span>Adresse:</span> <span>{{ auteur ? (auteur.adresse) : ''}}</span></li>
+				            	<li class="d-flex"><span>Zip code:</span> <span>{{ auteur ? (auteur.codePostal) : '' }}</span></li>
+				            	<li class="d-flex"><span>Email:</span> <span>{{ auteur ? (auteur.email) : '' }}</span></li>
+				            	<li class="d-flex"><span>Téléphone: </span> <span>{{ auteur ? (auteur.telephone) : '' }}</span></li>
 				            </ul>
 				          </div>
 				        </div>
 			          <div class="counter-wrap ftco-animate d-flex mt-md-3">
 		              <div class="text">
 		              	<p class="mb-4 btn-custom">
-			                 <span class="number" data-number="{{livre.prix}}">0</span>
+						<a href="{{url('app_achat_new')}}">
+			                 <span class="number" data-number="{{ livre ? (livre.prix) : '' }}">0</span>
 			                <span>USD J'achete le livre</span>
+						</a>
 		                </p>
 		              </div>
 			          </div>

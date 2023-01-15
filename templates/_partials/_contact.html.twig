@@ -18,7 +18,7 @@
           		</div>
           		<div>
 	          		<h3 class="mb-4">Addresse</h3>
-		            <p>{{auteur.adresse}}</p>
+		            <p>{{ auteur ? (auteur.adresse) : ''}}</p>
 		          </div>
 	          </div>
           </div>
@@ -29,7 +29,7 @@
           		</div>
           		<div>
 	          		<h3 class="mb-4">Numéro whatasapp </h3>
-		            <p><a href="tel://{{auteur.telephone}}">{{auteur.telephone}}</a></p>
+		            <p><a href="tel://{{ auteur ? (auteur.telephone) : ''}}">{{ auteur ? (auteur.telephone) : ''}}</a></p>
 	            </div>
 	          </div>
           </div>
@@ -40,7 +40,7 @@
           		</div>
           		<div>
 	          		<h3 class="mb-4">Addresse Email</h3>
-		            <p><a href="mailto:{{auteur.email}}">{{auteur.email}}</a></p>
+		            <p><a href="mailto:{{ auteur ? (auteur.email) : '' }}">{{ auteur ? (auteur.email) : '' }}</a></p>
 		          </div>
 	          </div>
           </div>
@@ -51,7 +51,7 @@
           		</div>
           		<div>
 	          		<h3 class="mb-4">Website</h3>
-		            <p><a href="#">{{parametre.website}}</a></p>
+		            <p><a href="#">{{ parametre ? (parametre.website) : '' }}</a></p>
 	            </div>
 	          </div>
           </div>
@@ -84,7 +84,9 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15681.577665944227!2d25.503844677452783!3d-10.704030577929913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1979e5c6fb5887d9%3A0xd7d7ba30a1cdd223!2smaintecas!5e0!3m2!1sfr!2scd!4v1671093453961!5m2!1sfr!2scd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             {# </div> #}
           	{# <div class="img" style="background-image: url(images/about.jpg);"></div> #}
+            {% if auteur is defined and auteur.photo is defined %}
           	<div class="img" style="background-image: url({{asset('uploads/images/'~ auteur.photo)}});"></div>
+            {% endif %}
           </div>
         </div>
       </div>

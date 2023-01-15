@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AchatRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 class Achat
 {
     #[ORM\Id]
@@ -38,17 +39,34 @@ class Achat
     #[ORM\JoinColumn(nullable: false)]
     private ?Adresse $adresseLivraison = null;
 
+    #[ORM\ManyToOne(inversedBy: 'achats')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?MobileMoney $mobileMoney = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $montantTotal = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $transId = null;
+
     // #[ORM\ManyToOne(inversedBy: 'achats')]
     // #[ORM\JoinColumn(nullable: false)]
     // private ?Shipment $shipment = null;
 
-    public function __construct(Livre $livre)
+
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function misAJour(){
+        $this->montantTotal= ($this->getQuantite() * $this->getLivre()->getPrix())/ 100;
+    }
+
+    public function __construct(User $user)
     {
         $this->date=new \DateTimeImmutable();
         // if(!$livre->isIsPrincipalRecent()){
         //     return 0;
         // }
-        $this->livre=$livre;
+        $this->user=$user;
         $this->quantite=1;
         $this->isLivre=false;
         $this->etat="en cours";
@@ -143,14 +161,38 @@ class Achat
         return $this;
     }
 
-    public function getShipment(): ?Shipment
+    public function getMobileMoney(): ?MobileMoney
     {
-        return $this->shipment;
+        return $this->mobileMoney;
     }
 
-    public function setShipment(?Shipment $shipment): self
+    public function setMobileMoney(?MobileMoney $mobileMoney): self
     {
-        $this->shipment = $shipment;
+        $this->mobileMoney = $mobileMoney;
+
+        return $this;
+    }
+
+    public function getMontantTotal(): ?float
+    {
+        return $this->montantTotal;
+    }
+
+    public function setMontantTotal(?float $montantTotal): self
+    {
+        $this->montantTotal = $montantTotal;
+
+        return $this;
+    }
+
+    public function getTransId(): ?string
+    {
+        return $this->transId;
+    }
+
+    public function setTransId(?string $transId): self
+    {
+        $this->transId = $transId;
 
         return $this;
     }

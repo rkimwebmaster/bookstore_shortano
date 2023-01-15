@@ -2,8 +2,9 @@
 <html lang="en">
 	<head>
 		<title>
-			{% block title %}Bienvenu(e)! sur 
-			{% endblock %} Shortano BookStore
+			{% block title %}Bienvenu(e)! sur
+			{% endblock %}
+			Shortano BookStore
 		</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,96 +34,129 @@
 		{% endblock %}
 	</head>
 	<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	{% if app.user %}
-	    <!-- ======= Top Bar ======= -->
-		<section id="topbar" class=" align-items-center row">
-			<div class="container justify-content-center justify-content-md-between">
-			<div class="contact-info pull-right  align-items-right">
-				<i class="fa fa-cart align-items-center"><a href="mailto:contact@example.com"> Acheter directement </a></i>
-				<i class="fa fa-user align-items-center"><a href="mailto:contact@example.com"> Bonjour {{app.user}}</a></i>
-				<i class="fa fa-user align-items-center"><a href="mailto:contact@example.com"> Déconnexion</a></i>
-				<i class="fa fa-flag align-items-center"><a href="mailto:contact@example.com"> EN</a></i>
-			</div>
-			</div>
-		</section>
-{% endif %}
-	  
-    
-{% include "_partials/_nav.html.twig" %}
-{% block body %}
-{# {% include "_partials/_accueil.html.twig" %} #}
-{# {% include "_partials/_apropos.html.twig" %} #}
-{# {% include "_partials/_chapitres.html.twig" %} #}
-{# 
-    <section class="ftco-section ftco-no-pt">
-    	<div class="container">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-5 heading-section text-center ftco-animate">
-          	<span class="subheading">Services</span>
-            <h2 class="mb-4">Services</h2>
-          </div>
-        </div>
-    		<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1 bg-light">
-							<span class="icon">
-								<i class="flaticon-user-experience"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Experience</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1 bg-light">
-							<span class="icon">
-								<i class="flaticon-network"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Marketing Goals</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1 bg-light">
-							<span class="icon">
-								<i class="flaticon-innovation"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Targetting Vission</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</div>
+		{% if app.user %}
+			<!-- ======= Top Bar ======= -->
+			<section id="topbar" class=" align-items-center border-bottom-danger row mb-2">
+				<div class="container justify-content-center justify-content-md-between">
+					<div
+						class="contact-info pull-left  align-items-left">
+						{# <i class="fa fa-cart align-items-center"><a href="mailto:contact@example.com"> Acheter directement </a></i> #}
+						<i class="fa fa-user align-items-center">
+							<a href="#">
+								Bonjour
+								{{app.user|upper}}</a>
+						</i>
+						{# <i class="fa fa-user align-items-center">
+							<a href="{{url('app_logout')}}">
+								Déconnexion</a>
+						</i> #}
+						{# <i class="fa fa-flag align-items-center"><a href="mailto:contact@example.com"> EN</a></i> #}
 					</div>
 				</div>
-    	</div>
-    </section> #}
+				
+			</section>
+			
+		{% endif %}
 
-		{# {% include "_partials/_temoignages.html.twig" %}
-		{% include "_partials/_meslivres.html.twig" %}
-		{% include "_partials/_auteur.html.twig" %} #}
-{% endblock %}
-         {% include "_partials/_footer.html.twig" %}
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-  <script src="{{asset('js/jquery.min.js')}}"></script>
-  <script src="{{asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
-  <script src="{{asset('js/popper.min.js')}}"></script>
-  <script src="{{asset('js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-  <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
-  <script src="{{asset('js/jquery.stellar.min.js')}}"></script>
-  <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-  <script src="{{asset('js/jquery.animateNumber.min.js')}}"></script>
-  <script src="{{asset('js/scrollax.min.js')}}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{{asset('js/google-map.js')}}"></script>
-  
-  <script src="{{asset('js/main.js')}}"></script>
-    
-  </body>
+		{% include "_partials/_nav.html.twig" %}
+
+		<section class="ftco-section mt-3 pt-3  mt-0 pb-0 -section ftco-no-pb" id="-section">
+			<div class="container">
+				<div class="row justify-content-center ">
+{# read and display all flash messages #}
+	{% for label, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="alert alert-{{ label }}">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>
+					<i class="">
+						👨
+					</i>
+					{{ label|title }}
+					!</strong>
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endfor %}
+				</div>
+			</div>
+		</section>
+		{% block body %}{# {% include "_partials/_accueil.html.twig" %} #}
+			{# {% include "_partials/_apropos.html.twig" %} #}
+			{# {% include "_partials/_chapitres.html.twig" %} #}
+			{# 
+			    <section class="ftco-section ftco-no-pt">
+			    	<div class="container">
+			    		<div class="row justify-content-center py-5 mt-5">
+			          <div class="col-md-5 heading-section text-center ftco-animate">
+			          	<span class="subheading">Services</span>
+			            <h2 class="mb-4">Services</h2>
+			          </div>
+			        </div>
+			    		<div class="row">
+								<div class="col-md-4 text-center d-flex ftco-animate">
+									<div class="services-1 bg-light">
+										<span class="icon">
+											<i class="flaticon-user-experience"></i>
+										</span>
+										<div class="desc">
+											<h3 class="mb-5">Experience</h3>
+											<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 text-center d-flex ftco-animate">
+									<div class="services-1 bg-light">
+										<span class="icon">
+											<i class="flaticon-network"></i>
+										</span>
+										<div class="desc">
+											<h3 class="mb-5">Marketing Goals</h3>
+											<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 text-center d-flex ftco-animate">
+									<div class="services-1 bg-light">
+										<span class="icon">
+											<i class="flaticon-innovation"></i>
+										</span>
+										<div class="desc">
+											<h3 class="mb-5">Targetting Vission</h3>
+											<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+			    	</div>
+			    </section> #}
+
+			{# {% include "_partials/_temoignages.html.twig" %}
+					{% include "_partials/_meslivres.html.twig" %}
+					{% include "_partials/_auteur.html.twig" %} #}
+		{% endblock %}
+		{% include "_partials/_footer.html.twig" %}
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen">
+			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg>
+		</div>
+
+		<script src="{{asset('js/jquery.min.js')}}"></script>
+		<script src="{{asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
+		<script src="{{asset('js/popper.min.js')}}"></script>
+		<script src="{{asset('js/bootstrap.min.js')}}"></script>
+		<script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
+		<script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
+		<script src="{{asset('js/jquery.stellar.min.js')}}"></script>
+		<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+		<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{asset('js/jquery.animateNumber.min.js')}}"></script>
+		<script src="{{asset('js/scrollax.min.js')}}"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="{{asset('js/google-map.js')}}"></script>
+
+		<script src="{{asset('js/main.js')}}"></script>
+
+	</body>
 </html>

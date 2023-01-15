@@ -14,10 +14,12 @@ class AchatType extends AbstractType
         $builder
            // ->add('date')
            // ->add('etat')
-            //->add('isLivre')
+            ->add('mobileMoney')
             ->add('quantite')
-            //->add('user')
-            ->add('livre')
+            ->add('transId', null, [
+                'attr'=> ['required'=>true],
+            ])
+            // ->add('livre')
             ->add('adresseLivraison', AdresseType::class)
         ;
     }

@@ -7,6 +7,7 @@ use App\Entity\Auteur;
 use App\Entity\AutreLivre;
 use App\Entity\Contact;
 use App\Entity\Livre;
+use App\Entity\MobileMoney;
 use App\Entity\Parametre;
 use App\Entity\PrivacyPage;
 use App\Entity\Shipment;
@@ -49,6 +50,11 @@ class DashboardController extends AbstractDashboardController
             MenuItem::subMenu('Parametres Gén.')->setSubItems([
                 MenuItem::linkToCrud('Liste ', 'fa fa-tags', Parametre::class)->setAction(Crud::PAGE_INDEX),
                 MenuItem::linkToCrud('Nouveau', 'fa fa-plus-circle', Parametre::class)->setAction(Crud::PAGE_NEW),
+
+            ]),
+            MenuItem::subMenu('Mobile money')->setSubItems([
+                MenuItem::linkToCrud('Liste ', 'fa fa-tags', MobileMoney::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Nouveau', 'fa fa-plus-circle', MobileMoney::class)->setAction(Crud::PAGE_NEW),
 
             ]),
             MenuItem::subMenu('Auteur')->setSubItems([

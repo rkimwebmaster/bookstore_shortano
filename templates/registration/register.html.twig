@@ -9,15 +9,25 @@
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h2 class="mb-4">S'enregistrer</h2>
-					<p>Créez votre compte desormais et commencez a commercer avec nous </p>
+					<h2 class="mb-4">Création de compte </h2>
+					<p class="alert alert-info">Créez votre compte desormais et commencez a commercer avec nous </p>
 					{{ form_start(registrationForm) }}
 					{{ form_row(registrationForm.nomComplet) }}
 					{{ form_row(registrationForm.email) }}
-					{{ form_row(registrationForm.telephone) }}
-					{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+			<div class="col col-md-12">
+			{{ form_row(registrationForm.password.first, {
+            label: 'Mot de passe '
         }) }}
+			</div>
+			<div class="col col-md-12">
+			{{ form_row(registrationForm.password.second, {
+            label: 'Répéter le mot de passe '
+        }) }}
+			</div>
+					{{ form_row(registrationForm.telephone) }}
+
+					{{ form_row(registrationForm.adresse) }}
+
 					{{ form_row(registrationForm.agreeTerms) }}
 
 					<button type="submit" class="btn btn-success">Je crée mon compte </button>

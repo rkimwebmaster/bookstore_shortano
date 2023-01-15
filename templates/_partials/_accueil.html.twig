@@ -1,18 +1,26 @@
 <section class="hero-wrap js-fullheight">
-      <div class="overlay"></div>
-      <div class="container-fluid px-0">
-      	<div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
-	      	<img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="{{asset('uploads/images/'~ livre.imagePrincipale)}}" alt="">
-	        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
-	        	<div class="text mt-5">
-	        		<span class="subheading">{{livre.sousTitre}}</span>
-		  				<h2>{{livre.titre}}</h2>
-		  				<p>
-						{{livre.APropos|u.truncate(400,'...')|raw}}
+	<div class="overlay"></div>
+	<div class="container-fluid px-0">
+		{% if livre is defined  and livre.imagePrincipale is defined %}
+			<div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+				<img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="{{asset('uploads/images/'~ livre.imagePrincipale)}}" alt="{{livre.imagePrincipale}}">
+				<div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+					<div class="text mt-5">
+						<span class="subheading">{{livre.sousTitre}}</span>
+						<h2>{{livre.titre}}</h2>
+						<p>
+							{{livre.APropos|u.truncate(400,'...')|raw}}
+
 						</p>
-		  				<p><a href="#" class="btn btn-primary py-3 px-4"> USD {{livre.prix|number_format}}</a></p>
-	          </div>
-	        </div>
-	    	</div>
-      </div>
-    </section>
+						<p>
+
+							<a href="{{url('app_achat_new')}}" onclick="alert(" bonjour")" class="btn btn-primary py-3 px-4"> USD
+								40 J'achète 
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</section>

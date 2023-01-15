@@ -1,4 +1,35 @@
 {{ form_start(form) }}
+<div class="row">
+    <div class="col col-md-12">
+       <p> {{ livre }} </p>
+    </div>
+    <div class="col col-md-1">
+        {{ form_row(form.quantite) }}
+    </div>
+    {# <div class="col col-md-2">
+        {{ form_row(form.adresseLivraison.telephone) }}
+    </div> #}
+    <div class="col col-md-6">
+        {{ form_row(form.adresseLivraison.adresse, {'label': 'Adresse de livraison'}) }}
+    </div>
+    <div class="col col-md-2">
+        {{ form_row(form.adresseLivraison.ville) }}
+    </div>
+    <div class="col col-md-3">
+        {{ form_row(form.adresseLivraison.pays) }}
+    </div>
+    <div class="col col-md-6">
+        {{ form_row(form.mobileMoney) }}
+    </div>
+    <div class="col col-md-6">
+        {{ form_row(form.transId) }}
+    </div>
+    <div class="col col-md-12 ">
+    	<a class="btn btn-warning pull-left" href="{{ path('app_achat_index') }}">retour à la liste de mes achats </a>
+        <button class="btn btn-success pull-right right float-right ">{{ button_label|default('Confirmer achat') }}</button>
+
+        <br /><br />
+    </div>
+</div>
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

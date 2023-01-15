@@ -65,7 +65,8 @@ class AccueilController extends AbstractController
         $message=$request->get('message');
         $contact=new Contact($nom, $email, $sujet, $message);
         $contactRepository->save($contact, true);
-        return $this->render('accueil/index.html.twig', [
+        $this->addFlash('info','Merci pour votre message, vous serz informer de la prochaine actualité.');
+        return $this->render('accueil/accueil.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }

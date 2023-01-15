@@ -5,14 +5,20 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Mot sur {{auteur}} </h2>
-              <p>
-              {{auteur.biographie|raw }}
+              <p style="height:20px'">
+              {% if auteur is defined and auteur.biographie is defined  %}
+              Joe SHORTANO,écrivain et chercheur Congolais, est le fondateur de la société Maintecas Holding, 
+              titulaire d'un master en droit des affaires, de l'université de Nantes, il est spécialiste en management stratégique, et consultant dans plusieurs entreprises à l'international.
+Joe SHORTANO a travaillé comme directeur général d'une PME pendant 10 ans.
+              {% endif %}
 
               </p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+              {% if parametre is defined and parametre.twitter is defined %}
                 <li class="ftco-animate"><a href="{{parametre.twitter}}"><span class="fa fa-twitter"></span></a></li>
 	              <li class="ftco-animate"><a href="{{parametre.facebook}}"><span class="fa fa-facebook"></span></a></li>
 	              <li class="ftco-animate"><a href="{{parametre.instagramme}}"><span class="fa fa-instagram"></span></a></li>
+              {% endif %}
               </ul>
             </div>
           </div>
@@ -20,10 +26,11 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Menu </h2>
               <ul class="list-unstyled">
+                <li><a href="{{url('app_achat_new')}}"></span>Acheter</a></li>
                 <li><a href="{{url('app_accueil', {page:1})}}"></span>Accueil</a></li>
                 <li><a href="{{url('app_accueil', {page:2})}}"></span>A Propos </a></li>
-                <li><a href="{{url('app_accueil', {page:3})}}"></span>Chapitres </a></li>
-                <li><a href="{{url('app_accueil', {page:4})}}"></span>Témoignages </a></li>
+                {# <li><a href="{{url('app_accueil', {page:3})}}"></span>Chapitres </a></li> #}
+                {# <li><a href="{{url('app_accueil', {page:4})}}"></span>Témoignages </a></li> #}
                 <li><a href="{{url('app_accueil', {page:7})}}"></span>Contact</a></li>
               </ul>
             </div>
@@ -43,9 +50,11 @@
             	<h2 class="ftco-heading-2">Vous avez une Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
+                    {% if parametre is defined and parametre.twitter is defined %}
 	                <li><span class="icon fa fa-map-marker"></span><span class="text">{{parametre.adresse}}</span></li>
 	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">{{parametre.telephone}}</span></a></li>
 	                <li title="Envoyer un mail " ><a href="mailto:{{parametre.email}}"><span class="icon fa fa-paper-plane"></span><span class="text">{{parametre.email|lower}}</span></a></li>
+                  {% endif %}
 	              </ul>
 	            </div>
             </div>

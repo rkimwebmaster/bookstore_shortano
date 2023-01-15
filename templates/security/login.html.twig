@@ -10,7 +10,6 @@
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<h2 class="mb-4">Ouverture de compte </h2>
-
 					<form method="post">
 						{% if error %}
 							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -40,13 +39,14 @@
 						        </div>
 						
 
-						<button class="btn btn-lg btn-primary mb-10" type="submit">
+                        <a href="{{url('app_register')}}" class="btn btn-lg btn-default mb-10" >
+							Créez un compte 
+						</a>
+						<button class="btn btn-lg btn-success mb-10" type="submit">
 							Connectez-vous!
 						</button>
-
-
-                        <a href="{{url('app_register')}}" class="btn btn-lg btn-success mb-10" >
-							Créez un compte 
+						<a href="{{url('app_register')}}" class="btn btn-lg btn-default mb-10" >
+							J'ai oublié mot de passe 
 						</a>
                         
 					</form>

@@ -23,10 +23,10 @@ class Adresse
     private ?string $pays = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $telephone = null;
+    private ?string $telephone = "097979797";
 
-    #[ORM\Column(length: 255)]
-    private ?string $email = null;
+    // #[ORM\Column(length: 255)]
+    // private ?string $email = null;
 
     // #[ORM\Column]
     // private ?\DateTimeImmutable $createdAt = null;
@@ -46,30 +46,6 @@ class Adresse
     }
 
     
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -119,18 +95,6 @@ class Adresse
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
 
         return $this;
     }
